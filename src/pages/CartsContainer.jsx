@@ -4,7 +4,7 @@ import Cart from '../components/Cart'
 import TotalCartItems from '../components/TotalCartItems'
 
 function CartsContainer() {
-    const cart = useSelector(state => state.cart)
+    const {cart} = useSelector(state => state.cart)
 
     if (cart.length === 0) {
         return (

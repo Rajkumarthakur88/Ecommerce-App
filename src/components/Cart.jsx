@@ -5,7 +5,7 @@ import { removeProduct } from "../store/CartSlice"
 
 function Cart({ product }) {
 
-    const { title, id, price, image, rating } = product
+    const {title, id, price, image, rating } = product
 
     const dispatch = useDispatch()
 

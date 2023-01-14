@@ -2,38 +2,38 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"
 
 
 const initialState = {
-    isSuccess : false,
-    isLoading : false,
-    isError : false,
-    products : []
+    isSuccess: false,
+    isLoading: false,
+    isError: false,
+    products: []
 }
 
 const productSlice = createSlice({
-    name : "product",
+    name: "product",
     initialState,
-    reducers : {
+    reducers: {
 
     },
-    extraReducers : (builder) => {
+    extraReducers: (builder) => {
         builder
-        .addCase(fetchProducts.pending , (state) => {
-            state.isLoading = true 
-        })
-        .addCase(fetchProducts.fulfilled , (state , actions) => {
-            state.isLoading = false
-            state.isSuccess = true
-            state.products = actions.payload 
-        })
-        .addCase(fetchProducts.rejected , (state) => {
-            state.isLoading = false
-            state.isError = true
-            state.products = []
-        })
+            .addCase(fetchProducts.pending, (state) => {
+                state.isLoading = true
+            })
+            .addCase(fetchProducts.fulfilled, (state, actions) => {
+                state.isLoading = false
+                state.isSuccess = true
+                state.products = actions.payload
+            })
+            .addCase(fetchProducts.rejected, (state) => {
+                state.isLoading = false
+                state.isError = true
+                state.products = []
+            })
     }
 })
 
 
-export const fetchProducts = createAsyncThunk("fetch/products" , async()=>{
+export const fetchProducts = createAsyncThunk("fetch/products", async () => {
 
     const response = await fetch('https://fakestoreapi.com/products')
     const data = await response.json()

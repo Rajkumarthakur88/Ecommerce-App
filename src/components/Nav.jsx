@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 
 function Nav() {
 
-    const cart = useSelector(state => state.cart)
+    const {cart} = useSelector(state => state.cart)
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container px-4 px-lg-5">
 
-                <Link to={"/"} className="navbar-brand" >E-Commerce</Link>
+                <Link to={"/E-Commerce-Redux"} className="navbar-brand" >E-Commerce</Link>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
