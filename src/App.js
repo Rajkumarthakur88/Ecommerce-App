@@ -15,7 +15,7 @@ function App() {
       <Router>
         <Nav />
         <Routes>
-          <Route path={"/E-Commerce-Redux"} element={<Home />} />
+          <Route path={"/"} element={<Home />} />
           <Route path={"/cartscontainer"} element={<CartsContainer />} />
           <Route path={"/about"} element={<About />} />
         </Routes>
